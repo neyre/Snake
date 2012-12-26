@@ -26,7 +26,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="10dp"
     android:text="@string/theme"
     android:textSize="18dp" />
 
@@ -36,16 +36,33 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_height="wrap_content"
     android:layout_below="@+id/textView1"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="10dp"
     android:entries="@array/optionsTheme" />
 
   <TextView
     android:id="@+id/textView2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
     android:layout_below="@+id/spinnerTheme"
-    android:layout_marginTop="40dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:text="@string/controls"
+    android:textSize="18dp" />
+
+  <Spinner
+    android:id="@+id/spinnerControls"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView2"
+    android:layout_centerHorizontal="true"
+    android:entries="@array/optionsControls" />
+
+  <TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/spinnerControls"
+    android:layout_marginTop="20dp"
     android:textSize="18dp"
     android:text="@string/viewMode" />
 
@@ -53,28 +70,26 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:id="@+id/spinnerView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/textView2"
+    android:layout_below="@+id/textView3"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="10dp"
     android:entries="@array/optionsView" />
 
   <TextView
-    android:id="@+id/textView3"
+    android:id="@+id/textView4"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:layout_below="@+id/spinnerView"
     android:textSize="18dp"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="20dp"
     android:text="@string/speed" />
 
   <Spinner
     android:id="@+id/spinnerSpeed"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/textView3"
+    android:layout_below="@+id/textView4"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="10dp"
     android:entries="@array/optionsSpeed" />
 
   <Button
@@ -83,7 +98,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_height="wrap_content"
     android:layout_below="@+id/spinnerSpeed"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="20dp"
     android:onClick="back"
     android:text="@string/back" />
 

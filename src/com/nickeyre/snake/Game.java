@@ -41,15 +41,16 @@ public class Game extends View {
   private GameScreen mActivity;
   public boolean gameOver=false;
   private int score,frameRate;
-  private boolean darkTheme,classicMode;
+  private boolean darkTheme,classicMode,snakeOriented;
 
-  public Game(Context context,GameScreen activity,TextView scoreView,boolean darkTheme,boolean classicMode,int speed) {
+  public Game(Context context,GameScreen activity,TextView scoreView,boolean darkTheme,boolean classicMode,boolean snakeOriented,int speed) {
     super(context);
     mActivity = activity;
     random = new Random();
     this.scoreView = scoreView;
     this.darkTheme = darkTheme;
     this.classicMode = classicMode;
+    this.snakeOriented = snakeOriented;
     this.frameRate = 5*(speed+1);
   }
 
@@ -199,14 +200,36 @@ public class Game extends View {
       for(Block block:blocks) block.draw(canvas);
     }
 
+    // Turn One Direction Left from Current Orientation (Snake Oriented)
+    // If Not Going Left or Right, Go Left (Four Direction)
     public void turnLeft(){
-      this.direction -= 1;
-      if(this.direction < 0) this.direction = 3;
+      if(snakeOriented){
+        this.direction -= 1;
+        if(this.direction < 0) this.direction = 3;
+      }else if(this.direction != 0 && this.direction != 2)
+        this.direction = 2;
     }
 
+    // Turn One Direction Right from Current Orientation (Snake Oriented)
+    // If Not Going Left or Right, Go Right (Four Direction)
     public void turnRight(){
-      this.direction += 1;
-      if(this.direction > 3) this.direction = 0;
+      if(snakeOriented){
+        this.direction += 1;
+        if(this.direction > 3) this.direction = 0;
+      }else if(this.direction != 0 && this.direction != 2)
+        this.direction = 0;
+    }
+
+    // If Not Going Down or Up, Go Down (Four Direction Only)
+    public void turnDown(){
+      if(!snakeOriented && this.direction != 1 && this.direction != 3)
+        this.direction = 1;
+    }
+
+    // If Not Going Down or Up, Go Up (Four Direction Only)
+    public void turnUp(){
+      if(!snakeOriented && this.direction != 1 && this.direction != 3)
+        this.direction = 3;
     }
 
     // Move Snake 1 Space in Current Direction

@@ -29,7 +29,7 @@ public class OptionsScreen extends Activity {
 
   SharedPreferences settings;
   SharedPreferences.Editor editor;
-  Spinner themeSpinner,viewSpinner,speedSpinner;
+  Spinner themeSpinner,controlsSpinner,viewSpinner,speedSpinner;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class OptionsScreen extends Activity {
     settings  = getSharedPreferences("settings", 0);
     editor    = settings.edit();
     int theme = settings.getInt("theme",0);
+    int controls = settings.getInt("controls",0);
     int view  = settings.getInt("view",0);
     int speed = settings.getInt("speed",0);
 
@@ -48,11 +49,13 @@ public class OptionsScreen extends Activity {
 
     // Grab Settings Spinners
     themeSpinner = (Spinner) findViewById(R.id.spinnerTheme);
+    controlsSpinner = (Spinner) findViewById(R.id.spinnerControls);
     viewSpinner  = (Spinner) findViewById(R.id.spinnerView);
     speedSpinner = (Spinner) findViewById(R.id.spinnerSpeed);
 
     // Set Spinner Current Values
     themeSpinner.setSelection(theme);
+    controlsSpinner.setSelection(controls);
     viewSpinner.setSelection(view);
     speedSpinner.setSelection(speed);
   }
@@ -68,11 +71,13 @@ public class OptionsScreen extends Activity {
 
     // Get New Values
     int theme = themeSpinner.getSelectedItemPosition();
+    int controls = controlsSpinner.getSelectedItemPosition();
     int view = viewSpinner.getSelectedItemPosition();
     int speed = speedSpinner.getSelectedItemPosition();
 
     // Save in Settings
     editor.putInt("theme", theme);
+    editor.putInt("controls", controls);
     editor.putInt("view", view);
     editor.putInt("speed", speed);
     editor.commit();

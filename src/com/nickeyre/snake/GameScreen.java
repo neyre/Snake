@@ -35,30 +35,34 @@ public class GameScreen extends Activity {
   private TextView score;
   private Activity mActivity;
   SharedPreferences settings;
-  private boolean darkTheme=false,classicMode=false;
+  private boolean darkTheme=false,snakeOriented=false,classicMode=false;
   private int speed;
 
   // Initialize Game Screen
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
-    // Set Theme, View Mode & Speed According to Settings
+    // Set Theme, Controls Mode, View Mode & Speed According to Settings
     settings = getSharedPreferences("settings", 0);
     if(settings.getInt("theme",0) == 1){
       setTheme(android.R.style.Theme_Holo);
       darkTheme=true;
     }
     if(settings.getInt("view",0) == 1)  classicMode = true;
+    if(settings.getInt("controls",0) == 1)  snakeOriented = true;
     speed = settings.getInt("speed", 1);
 
     // Create Game View & Add Handler to Current Activity
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.game);
+    if(snakeOriented)
+      setContentView(R.layout.game_2arrow);
+    else
+      setContentView(R.layout.game_4arrow);
     mActivity = this;
 
     // Grab Score TextView Handle, Create Game Object & Add Game to Frame
     score = (TextView) findViewById(R.id.score);
-    game = new Game(this,this,score,darkTheme,classicMode,speed);
+    game = new Game(this,this,score,darkTheme,classicMode,snakeOriented,speed);
     frameView = (FrameLayout) findViewById(R.id.gameFrame);
     frameView.addView(game);
 
@@ -74,6 +78,18 @@ public class GameScreen extends Activity {
   // Called from Button in View
   public void rightClick(View view){
     game.snake.turnRight();
+  }
+
+  // On Down Arrow Click, Snake Turns Down (Four Direction Only)
+  // Called from Button in View
+  public void downClick(View view){
+    game.snake.turnDown();
+  }
+
+  // On Up Arrow Click, Snake Turns Up (Four Direction Only)
+  // Called from Button in View
+  public void upClick(View view){
+    game.snake.turnUp();
   }
 
   // On Game Over, Make Alert Dialog with Two Options

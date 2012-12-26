@@ -24,13 +24,19 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
   <string name="gameover">Game Over</string>
   <string name="paused">Paused</string>
   <string name="theme">Theme</string>
-  <string name="viewMode">View</string>
+  <string name="controls">Controls</string>
+  <string name="viewMode">View Mode</string>
   <string name="speed">Speed</string>
   <string name="back">Back</string>
 
   <string-array name="optionsTheme">
     <item>Light</item>
     <item>Dark</item>
+  </string-array>
+
+  <string-array name="optionsControls">
+    <item>Four Direction</item>
+    <item>Snake Oriented</item>
   </string-array>
 
   <string-array name="optionsView">

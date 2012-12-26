@@ -1,0 +1,63 @@
+<!--
+Snake - an Android Game
+Copyright 2012 Nick Eyre <nick@nickeyre.com>
+
+Snake is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Snake is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Snake.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" >
+
+
+  <FrameLayout
+    android:id="@+id/gameFrame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/leftArrow"
+    android:layout_marginBottom="12dp" />
+
+  <ImageView
+    android:id="@+id/leftArrow"
+    android:layout_width="150dp"
+    android:layout_height="75dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="12dp"
+    android:onClick="leftClick"
+    android:src="@drawable/leftarrow" />
+
+  <ImageView
+    android:id="@+id/leftArrow"
+    android:layout_width="150dp"
+    android:layout_height="75dp"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:onClick="rightClick"
+    android:layout_marginBottom="12dp"
+    android:src="@drawable/rightarrow" />
+
+  <TextView
+    android:id="@+id/score"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="37dp"
+    android:gravity="center"
+    android:text="0"
+    android:textSize="25dp" />
+
+</RelativeLayout>

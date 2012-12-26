@@ -26,12 +26,12 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:id="@+id/gameFrame"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_above="@+id/leftArrow"
-    android:layout_marginBottom="12dp" />
+    android:layout_above="@+id/upArrow"
+    android:layout_marginBottom="-15dp" />
 
   <ImageView
     android:id="@+id/leftArrow"
-    android:layout_width="150dp"
+    android:layout_width="100dp"
     android:layout_height="75dp"
     android:layout_alignParentLeft="true"
     android:layout_alignParentBottom="true"
@@ -41,7 +41,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
 
   <ImageView
     android:id="@+id/leftArrow"
-    android:layout_width="150dp"
+    android:layout_width="100dp"
     android:layout_height="75dp"
     android:layout_alignParentRight="true"
     android:layout_alignParentBottom="true"
@@ -49,6 +49,27 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_marginBottom="12dp"
     android:src="@drawable/rightarrow" />
 
+  <ImageView
+    android:id="@+id/downArrow"
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="-10dp"
+    android:gravity="center"
+    android:onClick="downClick"
+    android:src="@drawable/downarrow" />
+
+  <ImageView
+    android:id="@+id/upArrow"
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="65dp"
+    android:gravity="center"
+    android:onClick="upClick"
+    android:src="@drawable/uparrow" />
 
   <TextView
     android:id="@+id/score"
@@ -56,7 +77,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
-    android:layout_marginBottom="37dp"
+    android:layout_marginBottom="50dp"
     android:gravity="center"
     android:text="0"
     android:textSize="25dp" />
