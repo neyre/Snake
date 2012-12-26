@@ -1,0 +1,47 @@
+<!--
+Snake - an Android Game
+Copyright 2012 Nick Eyre <nick@nickeyre.com>
+
+Snake is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Snake is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Snake.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+  <string name="app_name">Snake</string>
+  <string name="options">Snake Options</string>
+  <string name="optionsButton">Options</string>
+  <string name="begin">Start</string>
+  <string name="gameover">Game Over</string>
+  <string name="paused">Paused</string>
+  <string name="theme">Theme</string>
+  <string name="viewMode">View</string>
+  <string name="speed">Speed</string>
+  <string name="back">Back</string>
+
+  <string-array name="optionsTheme">
+    <item>Light</item>
+    <item>Dark</item>
+  </string-array>
+
+  <string-array name="optionsView">
+    <item>Modern</item>
+    <item>Classic</item>
+  </string-array>
+
+  <string-array name="optionsSpeed">
+    <item>Slow</item>
+    <item>Normal</item>
+    <item>Fast</item>
+    <item>Extreme</item>
+  </string-array>
+</resources>

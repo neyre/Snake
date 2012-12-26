@@ -1,0 +1,65 @@
+<!--
+Snake - an Android Game
+Copyright 2012 Nick Eyre <nick@nickeyre.com>
+
+Snake is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Snake is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Snake.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" >
+
+  <TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="32dp"
+    android:text="@string/app_name"
+    android:textSize="40dp" />
+
+  <Button
+    android:id="@+id/button1"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="100dp"
+    android:onClick="startGame"
+    android:text="@string/begin" />
+
+
+  <ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="240dp"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/button1"
+    android:layout_below="@+id/textView1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="35dp"
+    android:layout_marginTop="30dp"
+    android:src="@drawable/home" />
+
+  <Button
+    android:id="@+id/button2"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@+id/button1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"
+    android:onClick="options"
+    android:text="@string/optionsButton" />
+
+</RelativeLayout>
