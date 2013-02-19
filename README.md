@@ -18,6 +18,7 @@ Release History
 Ideas for Feature Enhancements
 ----------------------
 
+- Bring Arrows Closer Together on Four-Directional Layout for Easier Tapping
 - Local High Scores
 - Vibrate on Score
 - Additional Speeds
