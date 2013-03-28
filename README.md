@@ -24,3 +24,8 @@ Ideas for Feature Enhancements
 - Additional Speeds
 - Swipe to Move
 - Internationalization
+
+Contributing
+-------------
+
+Want to help? Send me an email!
