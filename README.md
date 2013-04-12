@@ -14,11 +14,11 @@ Release History
 
 - **Version 1.0** (1) - Initial Release
 - **Version 1.1** (2) - Addition of four direction control mode, edited options layout to fit on smaller devices.
+- **Version 1.1.1** (3) - Arrows brought closer together on four-directional layout for easier tapping.
 
 Ideas for Feature Enhancements
 ----------------------
 
-- Bring Arrows Closer Together on Four-Directional Layout for Easier Tapping
 - Local High Scores
 - Vibrate on Score
 - Additional Speeds

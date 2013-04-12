@@ -36,17 +36,19 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_alignParentLeft="true"
     android:layout_alignParentBottom="true"
     android:layout_marginBottom="12dp"
+    android:layout_marginLeft="35dp"
     android:onClick="leftClick"
     android:src="@drawable/leftarrow" />
 
   <ImageView
-    android:id="@+id/leftArrow"
+    android:id="@+id/rightArrow"
     android:layout_width="100dp"
     android:layout_height="75dp"
     android:layout_alignParentRight="true"
     android:layout_alignParentBottom="true"
     android:onClick="rightClick"
     android:layout_marginBottom="12dp"
+    android:layout_marginRight="35dp"
     android:src="@drawable/rightarrow" />
 
   <ImageView
