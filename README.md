@@ -24,6 +24,7 @@ Ideas for Feature Enhancements
 - Additional Speeds
 - Swipe to Move
 - Internationalization
+- Add Obstacles
 
 Contributing
 -------------
