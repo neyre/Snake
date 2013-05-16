@@ -17,16 +17,19 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.nickeyre.snake"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.nickeyre.snake"
   android:versionCode="3"
   android:versionName="1.1.1">
 
   <!-- Target Android 4.0.3, Minimum 2.2 -->
-  <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
+  <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15"
+            tools:ignore="OldTargetApi"/>
 
   <application android:label="@string/app_name"
     android:icon="@drawable/ic_launcher"
-    android:theme="@style/AppTheme">
+    android:theme="@style/AppTheme"
+    tools:ignore="AllowBackup">
 
     <!-- Register Title Screen Activity as Default (No Rotation, Hide Keyboard) -->
     <activity
@@ -44,14 +47,14 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
       android:name="com.nickeyre.snake.GameScreen"
       android:screenOrientation="nosensor"
       android:configChanges="keyboardHidden|orientation|screenSize"
-      ></activity>
+      />
 
     <!-- Register Options Screen Activity (No Rotation, Hide Keyboard) -->
     <activity android:label="@string/options"
       android:name="com.nickeyre.snake.OptionsScreen"
       android:screenOrientation="nosensor"
       android:configChanges="keyboardHidden|orientation|screenSize"
-      ></activity>
+      />
 
   </application>
 
