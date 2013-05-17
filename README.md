@@ -26,6 +26,7 @@ Ideas for Feature Enhancements
 - Swipe to Move
 - Internationalization
 - Add Obstacles
+- No Walls Mode with Wrapping Snake
 
 Contributing
 -------------

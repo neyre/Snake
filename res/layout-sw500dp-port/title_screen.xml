@@ -28,13 +28,13 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:layout_centerHorizontal="true"
     android:layout_marginTop="50dp"
     android:text="@string/app_name"
-    android:textSize="75dp" />
+    android:textSize="75sp" />
 
   <Button
     android:id="@+id/button1"
     android:layout_width="200dp"
     android:layout_height="75dp"
-    android:textSize="30dp"
+    android:textSize="30sp"
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
     android:layout_marginBottom="100dp"
@@ -57,7 +57,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
     android:id="@+id/button2"
     android:layout_width="200dp"
     android:layout_height="75dp"
-    android:textSize="30dp"
+    android:textSize="30sp"
     android:layout_alignTop="@+id/button1"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="80dp"
