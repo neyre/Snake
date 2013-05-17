@@ -33,7 +33,7 @@ import android.widget.TextView;
 public class Game extends View {
 
   private boolean setupComplete = false;
-  private int pxSquare, squaresWidth, squaresHeight,sqBorder=0,paddingTop=0,paddingLeft=0;
+  private int pxSquare, squaresWidth, squaresHeight,sqBorder=0,padding=0;
   private ArrayList<Block> walls;
   public Snake snake;
   private Food food;
@@ -136,8 +136,7 @@ public class Game extends View {
       pxSquare = pxSquareWidth;  //Extra Space on Top
 
     //Calculate Padding Around & Between Squares
-    paddingLeft = (pxWidth - squaresWidth * pxSquare)/2;
-    paddingTop = paddingLeft;
+    padding = (pxWidth - squaresWidth * pxSquare)/2;
     if(classicMode) sqBorder = pxSquare / 20;
 
     //Build List of Wall Objects
@@ -303,7 +302,7 @@ public class Game extends View {
       this.y = y;
 
       shape = new ShapeDrawable(new RectShape());
-      shape.setBounds(paddingLeft+x*pxSquare+sqBorder,paddingTop+y*pxSquare+sqBorder,paddingLeft+(x+1)*pxSquare-sqBorder,paddingTop+(y+1)*pxSquare-sqBorder);
+      shape.setBounds(padding+x*pxSquare+sqBorder,padding+y*pxSquare+sqBorder,padding+(x+1)*pxSquare-sqBorder,padding+(y+1)*pxSquare-sqBorder);
 
       this.setType(type);
     }
@@ -356,7 +355,7 @@ public class Game extends View {
         this.y = random.nextInt(squaresHeight-3)+1;
         if(!snake.collides(this) && !this.collides(blocks)) break;
       }
-      shape.setBounds(paddingLeft+x*pxSquare+sqBorder,paddingTop+y*pxSquare+sqBorder,paddingLeft+(x+1)*pxSquare-sqBorder,paddingTop+(y+1)*pxSquare-sqBorder);
+      shape.setBounds(padding+x*pxSquare+sqBorder,padding+y*pxSquare+sqBorder,padding+(x+1)*pxSquare-sqBorder,padding+(y+1)*pxSquare-sqBorder);
     }
 
   }

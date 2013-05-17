@@ -34,7 +34,7 @@ public class GameScreen extends Activity {
   private FrameLayout frameView;
   private TextView score;
   private Activity mActivity;
-  SharedPreferences settings;
+  SharedPreferences userPreferences, speedSetting;
   private boolean darkTheme=false,snakeOriented=false,classicMode=false;
   private int speed;
 
@@ -43,14 +43,16 @@ public class GameScreen extends Activity {
   public void onCreate(Bundle savedInstanceState) {
 
     // Set Theme, Controls Mode, View Mode & Speed According to Settings
-    settings = getSharedPreferences("settings", 0);
-    if(settings.getInt("theme",0) == 1){
+    // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
+    userPreferences = getSharedPreferences("settings", 0);
+    speedSetting = getSharedPreferences("speed", 0);
+    if(userPreferences.getInt("theme",0) == 1){
       setTheme(android.R.style.Theme_Holo);
       darkTheme=true;
     }
-    if(settings.getInt("view",0) == 1)  classicMode = true;
-    if(settings.getInt("controls",0) == 1)  snakeOriented = true;
-    speed = settings.getInt("speed", 1);
+    if(userPreferences.getInt("view",0) == 1)  classicMode = true;
+    if(userPreferences.getInt("controls",0) == 1)  snakeOriented = true;
+    speed = speedSetting.getInt("speed", 1);
 
     // Create Game View & Add Handler to Current Activity
     super.onCreate(savedInstanceState);

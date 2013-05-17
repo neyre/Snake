@@ -28,19 +28,21 @@ import android.widget.Spinner;
 
 public class OptionsScreen extends Activity {
 
-  SharedPreferences settings;
-  SharedPreferences.Editor editor;
+  SharedPreferences userPreferences, speedSetting;
+  SharedPreferences.Editor userPreferencesEditor, speedSettingEditor;
   Spinner themeSpinner,controlsSpinner,viewSpinner,speedSpinner;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
-    settings  = getSharedPreferences("settings", 0);
-    editor    = settings.edit();
-    int theme = settings.getInt("theme",0);
-    int controls = settings.getInt("controls",0);
-    int view  = settings.getInt("view",0);
-    int speed = settings.getInt("speed",0);
+    // Grab Existing Settings
+    // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
+    userPreferences  = getSharedPreferences("settings", 0);
+    int theme = userPreferences.getInt("theme",0);
+    int controls = userPreferences.getInt("controls",0);
+    int view  = userPreferences.getInt("view",0);
+    speedSetting = getSharedPreferences("speed", 0);
+    int speed = speedSetting.getInt("speed",0);
 
     // Set Dark Theme
     if(theme == 1) setTheme(android.R.style.Theme_Holo);
@@ -77,11 +79,15 @@ public class OptionsScreen extends Activity {
     int speed = speedSpinner.getSelectedItemPosition();
 
     // Save in Settings
-    editor.putInt("theme", theme);
-    editor.putInt("controls", controls);
-    editor.putInt("view", view);
-    editor.putInt("speed", speed);
-    editor.commit();
+    // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
+    userPreferencesEditor = userPreferences.edit();
+    userPreferencesEditor.putInt("theme", theme);
+    userPreferencesEditor.putInt("controls", controls);
+    userPreferencesEditor.putInt("view", view);
+    speedSettingEditor = speedSetting.edit();
+    speedSettingEditor.putInt("speed", speed);
+    userPreferencesEditor.commit();
+    speedSettingEditor.commit();
 
     // Call for Backup
     BackupManager backupManager = new BackupManager(this);
