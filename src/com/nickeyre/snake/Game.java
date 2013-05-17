@@ -21,6 +21,7 @@ package com.nickeyre.snake;
 import java.util.ArrayList;
 import java.util.Random;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -61,6 +62,7 @@ public class Game extends View {
   }
 
   // Draw View
+  @SuppressLint("DrawAllocation")
   protected void onDraw(Canvas canvas){
     if(!setupComplete) {
       setup();
@@ -311,8 +313,7 @@ public class Game extends View {
     }
 
     public boolean collides(Block block){
-      if(block.x == this.x && block.y == this.y) return true;
-      return false;
+      return block.x == this.x && block.y == this.y;
     }
 
     public boolean collides(ArrayList<Block> blocks){

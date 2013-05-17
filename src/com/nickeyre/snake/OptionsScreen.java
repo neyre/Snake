@@ -19,6 +19,7 @@ along with Snake.  If not, see <http://www.gnu.org/licenses/>.
 package com.nickeyre.snake;
 
 import android.app.Activity;
+import android.app.backup.BackupManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -81,6 +82,10 @@ public class OptionsScreen extends Activity {
     editor.putInt("view", view);
     editor.putInt("speed", speed);
     editor.commit();
+
+    // Call for Backup
+    BackupManager backupManager = new BackupManager(this);
+    backupManager.dataChanged();
 
     // Go Home & Close Options Screen
     Intent intent = new Intent(this, TitleScreen.class);

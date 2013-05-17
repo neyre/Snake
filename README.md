@@ -15,6 +15,7 @@ Release History
 - **Version 1.0** (1) - Initial Release
 - **Version 1.1** (2) - Addition of four direction control mode, edited options layout to fit on smaller devices.
 - **Version 1.1.1** (3) - Arrows brought closer together on four-directional layout for easier tapping.
+- **Version 1.2** (4) - Preferences automatically backed up using Android backup service.
 
 Ideas for Feature Enhancements
 ----------------------
