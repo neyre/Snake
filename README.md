@@ -20,13 +20,7 @@ Release History
 Ideas for Feature Enhancements
 ----------------------
 
-- Local High Scores
-- Vibrate on Score
-- Additional Speeds
-- Swipe to Move
-- Internationalization
-- Add Obstacles
-- No Walls Mode with Wrapping Snake
+Look in the Issues Section
 
 Contributing
 -------------
